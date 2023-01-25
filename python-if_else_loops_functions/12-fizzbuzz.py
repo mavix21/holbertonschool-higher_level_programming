@@ -2,7 +2,7 @@
 
 
 def fizzbuzz():
-    i = 0
+    i = 1
     s = ""
 
     while i <= 100:
