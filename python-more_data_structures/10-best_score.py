@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
-    scores = list(a_dictionary.values())
-    if len(scores) == 0:
+    if a_dictionary is None or len(a_dictionary) == 0:
         return None
 
-    return max(scores)
+    for key in a_dictionary.keys():
+        if a_dictionary[key] == max(list(a_dictionary.values())):
+            return key
