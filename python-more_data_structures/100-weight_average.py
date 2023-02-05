@@ -3,11 +3,13 @@ def weight_average(my_list=[]):
     if len(my_list) == 0:
         return 0
 
+    score_sum = 0
     weight_sum = 0
-    sum_of_weights = 0
-    for t in my_list:
-        a, b = t
-        weight_sum += a * b
-        sum_of_weights += b
+    for item in my_list:
+        if not isinstance(item, tuple) or len(item) != 2:
+            raise TypeError("Elements in my_list must be tuples of length 2")
+        score, weight = item
+        score_sum += score * weight
+        weight_sum += weight
 
-    return weight_sum / sum_of_weights
+    return score_sum / weight_sum
