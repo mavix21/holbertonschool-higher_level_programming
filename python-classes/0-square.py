@@ -3,10 +3,6 @@
 
 
 class Square:
-    """Empty Square class
-
-    Id does... Nothing
-
-    """
+    """Empty Square class"""
 
     pass
