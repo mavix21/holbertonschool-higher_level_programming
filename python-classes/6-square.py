@@ -29,6 +29,7 @@ class Square:
             Coordinates of the square
 
         """
+
         self.__size = size
         self.__position = position
 
@@ -89,7 +90,7 @@ class Square:
 
         """
 
-        if not isinstance(value, tuple) or len(value) != 2 or \
+        if type(value) != tuple or len(value) != 2 or \
                 not all(isinstance(i, int) and i >= 0 for i in value):
             raise TypeError("position must be a tuple of 2 positive integers")
 
