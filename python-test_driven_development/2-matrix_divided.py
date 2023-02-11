@@ -16,26 +16,22 @@ def matrix_divided(matrix, div):
     result_row = []
 
     if not isinstance(matrix, (list)) or not matrix:
-        raise TypeError("matrix must be a matrix(list of lists) \
-                of integers/floats")
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
     for sublist in matrix:
         if not isinstance(sublist, (list)):
-            raise TypeError("matrix must be a matrix(list of lists) \
-                    of integers/floats")
+            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
         for element in sublist:
-            if type(element) != int or type(element) != float:
-                raise TypeError("matrix must be a matrix(list of lists) \
-                        of integers/floats")
+            if type(element) != int and type(element) != float:
+                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
     row_size = len(matrix[0])
     if len(matrix) > 1:
         for row in matrix[1:]:
             if len(row) != row_size:
-                raise TypeError("Each row of the matrix (list of lists) \
-                        must have the same size")
+                raise TypeError("Each row of the matrix (list of lists) must have the same size")
 
-    if type(div) != int or type(div) != float:
+    if type(div) != int and type(div) != float:
         raise TypeError("div must be a number")
 
     if div == 0:
