@@ -1,0 +1,28 @@
+The ``2-matrix_divided`` module
+======================
+
+Using ``matrix_divided``
+----------------------
+
+This is an example text file in reStructuredText format.  First import
+``matrix_divided`` from the ``2-matrix_divided`` module:
+
+    >>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+Now use it:
+
+    >>> matrix_divided([[1], [2]], 2)
+    [[0.5], [1.0]]
+
+    >>> matrix_divided([[1.00], [2.0]], 3)
+    [[0.33], [0.67]]
+
+    >>> matrix_divided([[1], [2, 4]], 2)
+    Traceback (most recent call last):
+		...
+    TypeError: Each row of the matrix (list of lists) must have the same size
+
+    >>> matrix_divided([[1], [2, "Holberton"]], 2)
+    Traceback (most recent call last):
+		...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
