@@ -3,18 +3,13 @@
 
 
 def add_integer(a, b=98):
-    """
-    Returns the sum of two integers
+    """ Returns the sum of two integers
 
-        Parameters:
-        -----------
-
+        Arguments:
             a (int): an integer (or float) number
             b (int): another integer (or float) number
 
         Return:
-        -------
-
             the sum of a and b
     """
     if isinstance(a, (int, float)):
@@ -25,6 +20,6 @@ def add_integer(a, b=98):
     if isinstance(b, (int, float)):
         b = int(b)
     else:
-        raise TypeError("a must be an integer")
+        raise TypeError("b must be an integer")
 
     return a + b
