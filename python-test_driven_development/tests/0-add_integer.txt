@@ -37,7 +37,15 @@ Now use it:
         ...
     TypeError: a must be an integer
 
-    >>> add_integer(7, 'a')
+    >>> add_integer(8, 'la')
     Traceback (most recent call last):
         ...
     TypeError: b must be an integer
+
+	>>> add_integer(1e100, 1e100)	
+	20000000000000000318057822195198360936721617127890562779562655115495677544340762121626939971713630208
+
+	>>> add_integer(34, float('nan'))	
+	Traceback (most recent call last):
+        ...
+	ValueError: cannot convert float NaN to integer
