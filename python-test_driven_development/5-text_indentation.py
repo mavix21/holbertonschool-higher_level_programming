@@ -18,9 +18,8 @@ def text_indentation(text):
 
     symbols = ('.', '?', ':')
     symbol_printed = False
-    for letters in range(len(text)):
-        letter = text[letters]
-        if letters and letter == " " and symbol_printed:
+    for letter in text:
+        if letter == " " and symbol_printed:
             continue
 
         if letter in symbols:
