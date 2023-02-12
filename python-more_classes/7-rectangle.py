@@ -148,7 +148,7 @@ class Rectangle:
             if i > 0:
                 rectangle_string += '\n'
 
-            rectangle_string += str(Rectangle.print_symbol) * self.width
+            rectangle_string += str(self.print_symbol) * self.width
 
         return rectangle_string
 
