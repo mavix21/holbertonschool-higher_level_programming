@@ -21,4 +21,4 @@ def inherits_from(obj, a_class):
         False otherwise
 
     """
-    return inherits_from(obj.__class__, a_class)
+    return issubclass(obj.__class__, a_class)
