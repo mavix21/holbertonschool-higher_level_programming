@@ -17,7 +17,7 @@ class Rectangle(BaseGeometry):
     def __str__(self):
         """ String representation of an instance """
 
-        return f"[Rectangle] {self.__width}/{self.__height}"
+        return f"[{self.__class__.__name__}] {self.__width}/{self.__height}"
 
     def area(self):
         """ Computes the area of the rectangle instance """
