@@ -12,10 +12,13 @@ This is an example text file in reStructuredText format.  First import
 Now use it:
 
     >>> bg = BaseGeometry()
+    >>> isinstance(bg, BaseGeometry)
+    True
+
     >>> bg.integer_validator()
     Traceback (most recent call last):
 		...
-    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
     >>> bg.integer_validator("name", 1234)
     >>> bg.integer_validator("age", 28)
@@ -24,3 +27,18 @@ Now use it:
 	Traceback (most recent call last):
 		...
 	TypeError: name must be an integer
+
+	>>> bg.integer_validator("age", (4, ))
+	Traceback (most recent call last):
+		...
+	TypeError: age must be an integer
+
+	>>> bg.integer_validator("age", [4])
+	Traceback (most recent call last):
+		...
+	TypeError: age must be an integer
+
+	>>> bg.integer_validator("age", None)
+	Traceback (most recent call last):
+		...
+	TypeError: age must be an integer
