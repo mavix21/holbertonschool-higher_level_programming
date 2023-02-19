@@ -54,7 +54,7 @@ class Rectangle(Base):
     def height(self, value):
         """ Setter method for height property """
 
-        self.validate_attribute("width", value)
+        self.validate_attribute("height", value)
         self.__height = value
 
     @property
@@ -67,7 +67,7 @@ class Rectangle(Base):
     def x(self, value):
         """ Setter method for x property """
 
-        self.validate_attribute("width", value)
+        self.validate_attribute("x", value)
         self.__x = value
 
     @property
@@ -80,7 +80,7 @@ class Rectangle(Base):
     def y(self, value):
         """ Setter method for y property """
 
-        self.validate_attribute("width", value)
+        self.validate_attribute("y", value)
         self.__y = value
 
     @staticmethod
