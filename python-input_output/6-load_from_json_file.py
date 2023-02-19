@@ -16,7 +16,7 @@ def load_from_json_file(filename):
         The object (data structure)
     """
 
-    with open(filename, 'w', encoding="utf-8") as f:
+    with open(filename, 'r', encoding="utf-8") as f:
         my_obj = json.load(f)
 
     return (my_obj)
