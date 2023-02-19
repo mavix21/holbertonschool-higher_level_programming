@@ -41,6 +41,7 @@ class Rectangle(Base):
     def width(self, value):
         """ Setter method for width property """
 
+        self.validate_attribute("width", value)
         self.__width = value
 
     @property
@@ -53,6 +54,7 @@ class Rectangle(Base):
     def height(self, value):
         """ Setter method for height property """
 
+        self.validate_attribute("width", value)
         self.__height = value
 
     @property
@@ -65,6 +67,7 @@ class Rectangle(Base):
     def x(self, value):
         """ Setter method for x property """
 
+        self.validate_attribute("width", value)
         self.__x = value
 
     @property
@@ -77,4 +80,36 @@ class Rectangle(Base):
     def y(self, value):
         """ Setter method for y property """
 
+        self.validate_attribute("width", value)
         self.__y = value
+
+    @staticmethod
+    def validate_attribute(attribute_name, value):
+        """
+        Validates a given attribute of a rectangle instance
+
+        Parameters:
+            attribute_name (str):
+                the name of the attribute
+            value (any):
+                the value to be validated
+
+        Raises:
+            TypeError:
+                if value is not an integer
+
+            ValueError:
+                if value is less or equal to zero for the widht or heigh
+                if value is less than zero for x and y
+
+        """
+
+        if type(value) is not int:
+            raise TypeError("{:s} must be an integer".format(attribute_name))
+
+        if attribute_name in ("width", "height"):
+            if value <= 0:
+                raise ValueError("{:s} must be > 0".format(attribute_name))
+        elif attribute_name in ("x", "y"):
+            if value < 0:
+                raise ValueError("{:s} must be >= 0".format(attribute_name))
