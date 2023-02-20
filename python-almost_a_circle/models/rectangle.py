@@ -83,6 +83,11 @@ class Rectangle(Base):
         self.validate_attribute("y", value)
         self.__y = value
 
+    def area(self):
+        """ Computes the are of the rectangle instance """
+
+        return (self.width * self.height)
+
     @staticmethod
     def validate_attribute(attribute_name, value):
         """
