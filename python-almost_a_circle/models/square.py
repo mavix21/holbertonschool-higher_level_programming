@@ -25,6 +25,18 @@ class Square(Rectangle):
 
         super().__init__(size, size, x, y, id)
 
+    @property
+    def size(self):
+        """ Getter for size property """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """ Setter for size property """
+
+        self.width = value
+        self.height = value
+
     def __str__(self):
         """ Returns the string representation of the square instance """
 
