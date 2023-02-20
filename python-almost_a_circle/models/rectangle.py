@@ -107,6 +107,12 @@ class Rectangle(Base):
             for kw, value in kwargs.items():
                 setattr(self, kw, value)
 
+    def to_dictionary(self):
+        """ Returns the dictionary representation of a Rectangle """
+
+        square_attibutes = ["id", "width", "height", "x", "y"]
+        return {attr: getattr(self, attr) for attr in square_attibutes}
+
     def __str__(self):
         """
         Defines the string representation of the rectangle object
