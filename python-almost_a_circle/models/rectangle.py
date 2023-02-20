@@ -101,8 +101,8 @@ class Rectangle(Base):
             A string representation of the rectangle with "#"
 
         """
-        rectangle_str = f"""[Rectangle] ({self.id}) {self.x}/{self.y}
- - {self.width}/{self.height}"""
+        rectangle_str = f"[Rectangle] ({self.id}) {self.x}/{self.y} \
+- {self.width}/{self.height}"
 
         return (rectangle_str)
 
