@@ -96,12 +96,16 @@ class Rectangle(Base):
         for i in range(self.height):
             print((" " * self.x) + ("#" * self.width))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ Assigns an argument to each attribute """
 
         attrs = ("id", "width", "height", "x", "y")
-        for kw, value in zip(attrs, args):
-            setattr(self, kw, value)
+        if args:
+            for kw, value in zip(attrs, args):
+                setattr(self, kw, value)
+        elif kwargs:
+            for kw, value in kwargs.items():
+                setattr(self, kw, value)
 
     def __str__(self):
         """
