@@ -88,6 +88,11 @@ class Rectangle(Base):
 
         return (self.width * self.height)
 
+    def display(self):
+        """ Prints to stdout the Rectangle instance """
+        for i in range(self.height):
+            print("#" * self.width)
+
     @staticmethod
     def validate_attribute(attribute_name, value):
         """
