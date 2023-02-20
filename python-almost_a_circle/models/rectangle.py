@@ -96,6 +96,13 @@ class Rectangle(Base):
         for i in range(self.height):
             print((" " * self.x) + ("#" * self.width))
 
+    def update(self, *args):
+        """ Assigns an argument to each attribute """
+
+        attrs = ("id", "width", "height", "x", "y")
+        for kw, value in zip(attrs, args):
+            setattr(self, kw, value)
+
     def __str__(self):
         """
         Defines the string representation of the rectangle object
