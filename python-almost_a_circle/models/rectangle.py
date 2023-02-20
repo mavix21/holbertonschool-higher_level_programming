@@ -93,6 +93,19 @@ class Rectangle(Base):
         for i in range(self.height):
             print("#" * self.width)
 
+    def __str__(self):
+        """
+        Defines the string representation of the rectangle object
+
+        Returns:
+            A string representation of the rectangle with "#"
+
+        """
+        rectangle_str = f"""[Rectangle] ({self.id}) {self.x}/{self.y}
+ - {self.width}/{self.height}"""
+
+        return (rectangle_str)
+
     @staticmethod
     def validate_attribute(attribute_name, value):
         """
