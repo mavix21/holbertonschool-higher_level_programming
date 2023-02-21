@@ -33,6 +33,19 @@ class Base():
         return json.dumps(list_dictionaries) if list_dictionaries is not None \
             else "[]"
 
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        Returns the list of JSON representation, i.e an object of type list
+
+        """
+        if json_string is not None and json_string != []:
+            json_list = json.loads(json_string)
+        else:
+            json_list = []
+
+        return json_list
+
     @classmethod
     def save_to_file(cls, list_objs):
         """ Writes the JSON string representation to a file """
