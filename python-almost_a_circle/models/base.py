@@ -2,7 +2,7 @@
 """ This module defines the Base class in this project """
 
 import json
-
+import os
 
 class Base():
     """
@@ -76,3 +76,19 @@ class Base():
 
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """ Returns a list of instances from a JSON file """
+
+        filename = f"{cls.__name__}.json"
+        if not os.path.exists(filename):
+            return []
+
+        objects_list = []
+        with open(filename, 'r', encoding='utf-8') as f:
+            dictionary_list = cls.from_json_string(f.read())
+            for dict in dictionary_list:
+                objects_list.append(cls.create(**dict))
+
+        return objects_list
