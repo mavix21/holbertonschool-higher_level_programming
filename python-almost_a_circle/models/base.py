@@ -4,6 +4,7 @@
 import json
 import os
 
+
 class Base():
     """
     This class is the "base" of all other classes in this project. The goal of
