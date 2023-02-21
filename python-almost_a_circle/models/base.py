@@ -62,3 +62,17 @@ class Base():
 
         with open(filename, 'w', encoding='utf-8') as f:
             f.write(list_objs_json)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ Returns an instance with all attributes alrleady set """
+
+        if cls.__name__ == 'Rectangle':
+            dummy = cls(1, 1)
+        elif cls.__name__ == 'Square':
+            dummy = cls(1)
+        else:
+            return None
+
+        dummy.update(**dictionary)
+        return dummy
