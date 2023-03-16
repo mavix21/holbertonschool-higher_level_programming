@@ -19,7 +19,7 @@ if __name__ == "__main__":
         cur = conn.cursor()
 
         try:
-            cur.execute("SELECT * FROM states WHERE name LIKE 'N%'\
+            cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%'\
                     ORDER BY id;")
             query_rows = cur.fetchall()
 
