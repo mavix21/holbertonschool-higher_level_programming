@@ -3,9 +3,8 @@
 """
 
 if __name__ == "__main__":
-    import re
     import sys
-    from sqlalchemy import create_engine, inspect
+    from sqlalchemy import create_engine
     from sqlalchemy.orm import sessionmaker
     from model_state import Base, State
 
@@ -14,9 +13,7 @@ if __name__ == "__main__":
         conn = 'mysql+mysqldb://{}:{}@localhost/{}'.format(av[1], av[2], av[3])
         engine = create_engine(conn)
 
-        inspector = inspect(engine)
-        if not inspector.has_table("states"):
-            Base.metadata.create_all(engine)
+        Base.metadata.create_all(engine)
 
         Session = sessionmaker(bind=engine)
         with Session() as session:
