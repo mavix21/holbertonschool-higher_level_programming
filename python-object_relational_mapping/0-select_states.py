@@ -27,6 +27,7 @@ if __name__ == "__main__":
 
         except MySQLdb.Error as e:
             print(f"An error ocurred while excecuting the query: {e}")
+
         finally:
             cur.close()
 
@@ -37,5 +38,6 @@ if __name__ == "__main__":
         try:
             if conn:
                 conn.close()
+
         except MySQLdb.Error as e:
             print(f"Error closing database connection: {e}")

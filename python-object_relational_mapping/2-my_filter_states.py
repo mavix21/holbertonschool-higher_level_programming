@@ -19,9 +19,8 @@ if __name__ == "__main__":
         cur = conn.cursor()
 
         try:
-            query = "SELECT * FROM states WHERE BINARY\
-                    name = '{}';".format(argv[4])
-            cur.execute(query)
+            query = "SELECT * FROM states WHERE BINARY name = %s;"
+            cur.execute(query, (argv[4],))
             query_rows = cur.fetchall()
 
             for row in query_rows:
