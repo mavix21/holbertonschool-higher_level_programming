@@ -4,8 +4,8 @@ const { argv } = require('process');
 const arg1 = +argv[2];
 const arg2 = +argv[3];
 
-function add(a, b) {
-  let sum = a + b;
+function add (a, b) {
+  const sum = a + b;
   console.log(sum);
 }
 
