@@ -9,12 +9,9 @@ class Rectangle {
   }
 
   print () {
-    const repr = [];
     for (let i = 0; i < this.height; i++) {
-      repr.push('X'.repeat(this.width));
+      console.log('X'.repeat(this.width));
     }
-
-    console.log(repr.join('\n'));
   }
 
   rotate () {
