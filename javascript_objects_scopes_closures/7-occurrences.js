@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const nbOccurences = function (list, searchElement) {
+const nbOccurences = (list, searchElement) => {
   let numberOfOcurrences = 0;
   for (let i = 0; i < list.length; i++) {
     if (list[i] === searchElement) {
@@ -11,4 +11,9 @@ const nbOccurences = function (list, searchElement) {
   return (numberOfOcurrences);
 };
 
-module.exports.nbOccurences = nbOccurences;
+// Another way:
+// const nbOccurences = (list, searchElement) => list.filter((element) => {
+//   searchElement === element).length
+// };
+
+module.exports = { nbOccurences };
