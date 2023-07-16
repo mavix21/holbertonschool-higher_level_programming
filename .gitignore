@@ -1,0 +1,11 @@
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+**/node_modules/
+package.json
+package-lock.json
+.eslintrc.js
